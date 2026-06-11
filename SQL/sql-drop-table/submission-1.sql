@@ -1,27 +1,14 @@
-CREATE TABLE books (
+CREATE TABLE unused_table (
   id INTEGER,
-  title TEXT,
-  author TEXT
+  name TEXT
 );
 -- Do not modify above this line --
 
 
-
-
-ALTER TABLE books ADD published_year INTEGER;
-
-ALTER TABLE books RENAME id TO isbn;
-
-
-ALTER TABLE books DROP COLUMN author;
-
-
-
-
+DROP TABLE unused_table;
 
 
 -- Do not modify below this line --
-SELECT column_name, data_type, column_default
+SELECT column_name, data_type, is_nullable, column_default
 FROM information_schema.columns
-WHERE table_name = 'books'
-ORDER BY column_name;
+WHERE table_name = 'unused_table';
